@@ -1,0 +1,25 @@
+.header {
+    grid-area: h;
+    border: 1px solid black;
+    background-color: blue;
+    height: 80px;
+}
+
+.logo_wrapper {
+    height: 80px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 15px;
+}
+
+.logo_img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}

@@ -1,0 +1,17 @@
+.navbar {
+    grid-area: n;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navlink {
+    text-decoration: none;
+    color: black;
+}
+
+.active_navlink {
+    color: white;
+}
