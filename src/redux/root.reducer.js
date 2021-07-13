@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux'
-import newsReducer from "./newsReducer/newsReducer";
+import newsReducer from "./news/news.reducer";
 
 const globalReducer = combineReducers({news: newsReducer})
 
