@@ -1,10 +1,12 @@
 import React from "react";
-import s from "./loadMore.module.css"
+import s from "./GetMore.module.css"
 
-const LoadMore = props => {
+const GetMore = props => {
+
     return <div onClick={() => {
-        props.changePSize(props.pageSize,props.path);
-    }} className={s.loadMoreWrapper}>Загрузити ще</div>
+        props.getMoreNews(props.pageSize)
+
+    }} className={s.getMoreWrapper}>Загрузити ще</div>
 }
 
-export default LoadMore
+export default GetMore

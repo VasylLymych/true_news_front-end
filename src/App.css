@@ -1,4 +1,4 @@
-html, body {
+html{
     height: 100%;
     width: 100%;
 }
@@ -7,7 +7,7 @@ html, body {
     display: grid;
     grid-template-areas: "h h"
                          "n c";
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 85px 100%;
     grid-template-columns: 20% 80%;
     grid-gap: 3px;
 }

@@ -1,4 +1,4 @@
-.articleWrapper {
+.newsItemWrapper {
     height: 300px;
     width: 100%;
     display: flex;
@@ -7,13 +7,13 @@
     align-items: center;
 }
 
-.articleNav {
+.newsItemNav {
     text-decoration: none;
     font-size: 20px;
     color: black;
 }
 
-.articleNav:hover {
+.newsItemNav:hover {
     color: white;
     transition: 0.2s;
 }

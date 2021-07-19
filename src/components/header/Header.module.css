@@ -1,25 +1,26 @@
 .header {
     grid-area: h;
-    border: 1px solid black;
-    background-color: blue;
-    height: 80px;
+    background-color: darkgray;
+    height: 100%;
+    width: 100%;
 }
 
 .logo_wrapper {
-    height: 80px;
+    margin-top: 5px;
+    height: 85px;
     width: 30%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
 h1 {
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .logo_img {
-    height: 40px;
+    height: 38px;
     width: 40px;
     border-radius: 50%;
 }

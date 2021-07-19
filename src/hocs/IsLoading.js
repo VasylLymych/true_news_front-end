@@ -1,7 +1,6 @@
-import loadingGif from '../loading.gif'
-import s from './../components/content.style/Content.module.css'
+import Preloader from "../components/preloader/Preloader";
 
-const Preloader = props => {
-    return props.isFetching ? <img className={s.content_wrapper} src={loadingGif} alt="loading"/> : props.children
+const IsLoading = props => {
+    return props.isFetching ? <Preloader/> : props.children
 }
-export default Preloader
+export default IsLoading

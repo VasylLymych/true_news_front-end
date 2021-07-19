@@ -1,7 +1,7 @@
 import {createSelector} from "reselect";
 
-const getPageSize = state => state.news.pageSize;
+const getUkraineNewsPageSize = state => state.news.UkraineNewsPageSize;
 
-const pageSizeSelector = createSelector(getPageSize, pageSize => pageSize);
+const ukraineNewsPageSizeSelector = createSelector(getUkraineNewsPageSize, UkraineNewsPageSize => UkraineNewsPageSize);
 
-export default pageSizeSelector
+export default ukraineNewsPageSizeSelector

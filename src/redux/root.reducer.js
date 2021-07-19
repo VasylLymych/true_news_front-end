@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux'
 import newsReducer from "./news/news.reducer";
 
-const globalReducer = combineReducers({news: newsReducer})
+const rootReducer = combineReducers({news: newsReducer})
 
-export default globalReducer
+export default rootReducer

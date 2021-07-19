@@ -1,5 +1,8 @@
-.loadMoreWrapper {
+.getMoreWrapper {
     height: 20px;
     width: 30%;
     background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

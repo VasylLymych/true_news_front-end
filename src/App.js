@@ -1,16 +1,17 @@
 import './App.css';
 import Header from "./components/header/Header";
 import Navbar from "./components/navbar/Navbar";
-import Content from "./components/content/Content.container";
+import Routes from "./routes/Routes";
+import Notification from "./components/notification/Notification";
 
-function App() {
+const App = props => {
     return (
         <div className='app-wrapper'>
             <Header/>
             <Navbar/>
-            <Content/>
+            <Routes/>
+            {props.notification ? <Notification category={props.category}/> : null}
         </div>
-    );
+    )
 }
-
 export default App;

@@ -7,6 +7,7 @@ const Navbar = () => {
         <nav className={s.navbar}>
             <NavLink to='/UkraineNews' className={s.navlink} activeClassName={s.active_navlink}>Новини України</NavLink>
             <NavLink to='/WorldNews' className={s.navlink} activeClassName={s.active_navlink}>Новини світу</NavLink>
+            <NavLink to='/addNewsItem' className={s.navlink} activeClassName={s.active_navlink}>Додати новину</NavLink>
         </nav>
     )
 }
