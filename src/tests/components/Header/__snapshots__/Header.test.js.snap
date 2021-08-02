@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component test component snapshot 1`] = `
+<header
+  className="header"
+>
+  <div
+    className="logo_wrapper"
+  >
+    <img
+      alt="logo"
+      className="logo_img"
+      src="logo.jpg"
+    />
+    <h1>
+      Новини України та світу
+    </h1>
+  </div>
+</header>
+`;

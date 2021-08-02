@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GetMore component test component snapshot 1`] = `
+<div
+  className="getMoreWrapper"
+  onClick={[Function]}
+>
+  Загрузити ще
+</div>
+`;
+
+exports[`GetMore component test onClick event 1`] = `
+<div
+  className="getMoreWrapper"
+  onClick={[Function]}
+>
+  Загрузити ще
+</div>
+`;

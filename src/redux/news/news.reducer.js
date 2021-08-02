@@ -10,7 +10,6 @@ import {
     SET_CURRENT_NEWS_ARTICLE
 } from "./news.types";
 
-
 const initialState = {
     UkraineNews: [],
     worldNews: [],
@@ -55,5 +54,4 @@ const newsReducer = (state = initialState, action) => {
         }
     }
 }
-
 export default newsReducer
