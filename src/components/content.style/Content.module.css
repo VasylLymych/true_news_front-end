@@ -1,5 +1,5 @@
 .content_wrapper {
-    background-color: darkgray;
+    background-color: cornflowerblue;
     width: 100%;
     height: 100%;
     grid-area: c;
@@ -7,4 +7,10 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+
+.newsArticleWrapper{
+    word-wrap: break-word;
+    height: 100%;
+    width: 100%;
 }

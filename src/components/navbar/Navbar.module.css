@@ -1,6 +1,6 @@
 .navbar {
     grid-area: n;
-    background-color: darkgray;
+    background-color: cornflowerblue;
     height: 200px;
     width: 100%;
     display: flex;
@@ -17,4 +17,14 @@
 
 .active_navlink {
     color: snow;
+}
+@media (max-width: 342px) {
+    .navlink {
+        text-decoration: none;
+        font-size: 10px;
+        color: black;
+    }
+    .active_navlink {
+        color: snow;
+    }
 }

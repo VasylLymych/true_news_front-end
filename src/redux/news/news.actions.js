@@ -13,10 +13,12 @@ import {
     HIDE_ALL_UKRAINE_NEWS,
     SET_NOTIFICATION_TRUE,
     SET_NOTIFICATION_FALSE,
-    GET_NOTIFICATION
+    GET_NOTIFICATION, SET_CURRENT_NEWS_ARTICLE, GET_CURRENT_NEWS_ARTICLE
 } from "./news.types";
 
 export const getUkraineNews = payload => ({type: GET_UKRAINE_NEWS, payload});
+export const getCurrentNewsArticle = payload => ({type: GET_CURRENT_NEWS_ARTICLE, payload});
+export const setCurrentNewsArticle = payload => ({type: SET_CURRENT_NEWS_ARTICLE, payload});
 export const getWorldNews = payload => ({type: GET_WORLD_NEWS, payload});
 export const getMoreUkraineNews = payload => ({type: GET_MORE_UKRAINE_NEWS, payload});
 export const getMoreWorldNews = payload => ({type: GET_MORE_WORLD_NEWS, payload});

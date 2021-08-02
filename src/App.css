@@ -1,13 +1,16 @@
-html{
+html {
     height: 100%;
     width: 100%;
 }
-
-.app-wrapper {
-    display: grid;
-    grid-template-areas: "h h"
+@media (max-width: 1920px) {
+    .app-wrapper {
+        display: grid;
+        grid-template-areas: "h h"
                          "n c";
-    grid-template-rows: 85px 100%;
-    grid-template-columns: 20% 80%;
-    grid-gap: 3px;
+        grid-template-rows: 85px 100%;
+        grid-template-columns: 20% 80%;
+        grid-gap: 4px;
+    }
 }
+
+

@@ -6,12 +6,12 @@ import HideAll from "../hideAll/HideAll";
 
 const UkraineNews = props => {
     const currentN = props.UkraineNews.length - 5;
-
+    console.log(props);
     return (
         <main className={s.content_wrapper}>
             {props.UkraineNews.map((el, i) =>
-                currentN === i ? <NewsItem currentN={true} key={el.id} title={el.title} id={el.id}/> :
-                    <NewsItem key={el._id} title={el.title} id={el._id}/>)}
+                currentN === i ? <NewsItem currentN={true} key={el._id} title={el.title} id={el._id}/> :
+                    <NewsItem key={el._id} photo={el.photo} title={el.title} id={el._id}/>)}
             <GetMore getMoreNews={props.getMoreUNews} pageSize={props.UkraineNewsPageSize}/>
             {props.UkraineNews.length > 5 ? <HideAll hideAllNews={props.hideAllUNews}/> : null}
         </main>

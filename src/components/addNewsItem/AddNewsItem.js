@@ -1,9 +1,14 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import s from "./../content.style/Content.module.css"
 import {Formik, Form, Field} from "formik"
 import socket from "../../socket";
+import SocketIOFileUpload from "socketio-file-upload"
 
 const AddNewsItem = () => {
+    const fileInput = useRef();
+    const submitBtn = useRef();
+    const uploader = new SocketIOFileUpload(socket);
+    useEffect(() => uploader.listenOnSubmit(submitBtn.current, fileInput.current))
     return (
         <Formik initialValues={{
             title: "",
@@ -12,7 +17,13 @@ const AddNewsItem = () => {
             category: ""
         }}
                 validateOnBlur
-                onSubmit={values => values.category === "UkraineNews" ? socket.emit("addUkraineNewsItem", values) : socket.emit("addWorldNewsItem", values)}>
+                onSubmit={values => {
+
+                    if (values.category === "UkraineNews") {
+                        socket.emit("addUkraineNewsItem", values)
+                    } else
+                        socket.emit("addWorldNewsItem", values)
+                }}>
             {({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) => (
                 <Form className={s.content_wrapper} onSubmit={handleSubmit}>
                     <label htmlFor={"title"}>Заголовок новини:</label>
@@ -21,13 +32,14 @@ const AddNewsItem = () => {
                     <Field type="text" name={"description"} onChange={handleChange} onBlur={handleBlur}
                            value={values.description}/>
                     <label htmlFor={"photo"}>Фотографія для новини:</label>
-                    <Field type="file" name={"photo"} onChange={handleChange} onBlur={handleBlur} value={values.photo}/>
+                    <input type="file" ref={fileInput} name={"photo"} onChange={handleChange} onBlur={handleBlur}
+                           value={values.photo}/>
                     <label htmlFor={"category"}>Категорія новин:</label>
                     <label><Field type="radio" name={"category"} onChange={handleChange} onBlur={handleBlur}
                                   value={"UkraineNews"}/>Новини України</label>
                     <label><Field type="radio" name={"category"} onChange={handleChange}
                                   onBlur={handleBlur} value={"worldNews"}/>Новини світу</label>
-                    <Field disabled={!isValid && !dirty} type="submit" value="Відправити"/>
+                    <input disabled={!isValid && !dirty} ref={submitBtn} type="submit" value="Відправити"/>
                 </Form>
             )}
 

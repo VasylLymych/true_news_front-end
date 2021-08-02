@@ -6,7 +6,8 @@ import {
     SET_UKRAINE_NEWS_PAGE_SIZE,
     SET_WORLD_NEWS_PAGE_SIZE,
     SET_NOTIFICATION_TRUE,
-    SET_NOTIFICATION_FALSE
+    SET_NOTIFICATION_FALSE,
+    SET_CURRENT_NEWS_ARTICLE
 } from "./news.types";
 
 
@@ -16,7 +17,8 @@ const initialState = {
     UkraineNewsPageSize: 5,
     worldNewsPageSize: 5,
     isFetching: false,
-    notification: false
+    notification: false,
+    currentNewsArticle: {}
 }
 
 const newsReducer = (state = initialState, action) => {
@@ -44,6 +46,9 @@ const newsReducer = (state = initialState, action) => {
         }
         case SET_NOTIFICATION_FALSE: {
             return {...state, notification: false}
+        }
+        case SET_CURRENT_NEWS_ARTICLE: {
+            return {...state, currentNewsArticle: action.payload}
         }
         default: {
             return state

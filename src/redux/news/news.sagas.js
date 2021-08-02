@@ -3,21 +3,29 @@ import {
     setUkraineNews,
     setWorldNews,
     setIsFetchingTrue,
-    setIsFetchingFalse, setWorldNewsPageSize, setUkraineNewsPageSize, setNotificationTrue, setNotificationFalse,
+    setIsFetchingFalse,
+    setWorldNewsPageSize,
+    setUkraineNewsPageSize,
+    setNotificationTrue,
+    setNotificationFalse,
+    setCurrentNewsArticle,
 } from "./news.actions";
 import {
     GET_UKRAINE_NEWS,
     GET_WORLD_NEWS,
     GET_MORE_UKRAINE_NEWS,
     GET_MORE_WORLD_NEWS,
-    HIDE_ALL_UKRAINE_NEWS, HIDE_ALL_WORLD_NEWS, GET_NOTIFICATION
+    HIDE_ALL_UKRAINE_NEWS,
+    HIDE_ALL_WORLD_NEWS,
+    GET_NOTIFICATION,
+    GET_CURRENT_NEWS_ARTICLE,
 } from "./news.types";
 import newsAPI from "./../../api/newsAPI"
 
 function* getWorldNewsWorker({payload}) {
     try {
         yield put(setIsFetchingTrue())
-        const data = yield call(newsAPI.getWorldNews,payload)
+        const data = yield call(newsAPI.getWorldNews, payload)
         yield put(setIsFetchingFalse())
         yield put(setWorldNews(data))
     } catch (e) {
@@ -29,13 +37,19 @@ function* getWorldNewsWorker({payload}) {
 function* getUkraineNewsWorker({payload}) {
     try {
         yield put(setIsFetchingTrue())
-        const data = yield call(newsAPI.getUkraineNews,payload)
-        console.log(data);
+        const data = yield call(newsAPI.getUkraineNews, payload)
         yield put(setIsFetchingFalse())
         yield put(setUkraineNews(data))
     } catch (e) {
         console.log(e);
     }
+}
+
+function* getCurrentNewsArticleWorker({payload}) {
+    yield put(setIsFetchingTrue());
+    const data = yield call(newsAPI.getCurrentNewsArticle, payload);
+    yield put(setIsFetchingFalse())
+    yield put(setCurrentNewsArticle(data));
 }
 
 function* getMoreWorldNewsWorker({payload}) {
@@ -50,14 +64,13 @@ function* getMoreUkraineNewsWorker({payload}) {
 
 function* hideAllUkraineNewsWorker() {
     yield put(setUkraineNewsPageSize(5))
-    yield yield getUkraineNewsWorker({payload: 5})
+    yield getUkraineNewsWorker({payload: 5})
 }
 
 function* hideAllWorldNewsWorker() {
     yield put(setWorldNewsPageSize(5))
     yield getWorldNewsWorker({payload: 5})
 }
-
 
 function* notificationWorker() {
     const delay = () => new Promise(resolve => setTimeout(resolve, 5000))
@@ -74,4 +87,5 @@ export default function* newsSagasWatcher() {
     yield (takeEvery(HIDE_ALL_UKRAINE_NEWS, hideAllUkraineNewsWorker))
     yield (takeEvery(HIDE_ALL_WORLD_NEWS, hideAllWorldNewsWorker))
     yield (takeEvery(GET_NOTIFICATION, notificationWorker))
+    yield (takeEvery(GET_CURRENT_NEWS_ARTICLE, getCurrentNewsArticleWorker))
 }

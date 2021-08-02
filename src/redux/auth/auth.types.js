@@ -1,0 +1,2 @@
+export const SET_IS_AUTH_TRUE = "SET_IS_AUTH_TRUE"
+export const SET_IS_AUTH_FALSE = "SET_IS_AUTH_FALSE"

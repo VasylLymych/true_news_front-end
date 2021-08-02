@@ -1,0 +1,21 @@
+.notificationWrapper {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-top: 10px;
+}
+@media (max-width: 330px) {
+    .notificationWrapper {
+        height: 10%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        margin-top: 10px;
+        font-size: 10px;
+    }
+}

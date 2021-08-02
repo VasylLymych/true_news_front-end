@@ -12,7 +12,7 @@ import ukraineNewsPageSizeSelector from "../../selectors/UkraineNewsPageSizeSele
 
 const UkraineNewsContainer = props => {
     useEffect(() => props.getUNews(props.UkraineNewsPageSize), [])
-
+    console.log(props.UkraineNews);
     return (
         <IsLoading isFetching={props.isFetching}>
             <UkraineNews UkraineNews={props.UkraineNews} UkraineNewsPageSize={props.UkraineNewsPageSize}

@@ -10,8 +10,9 @@ const WorldNews = props => {
     return (
         <main className={s.content_wrapper}>
             {props.worldNews.map((el, i) =>
-                currentN === i ? <NewsItem currentN={true} key={el.id} title={el.title} id={el.id}/> :
-                    <NewsItem key={el._id} title={el.title} id={el._id}/>)}
+                currentN === i ?
+                    <NewsItem currentN={true} photo={el.photo} key={el._id} title={el.title} id={el._id}/> :
+                    <NewsItem key={el._id} photo={el.photo}  title={el.title} id={el._id}/>)}
             <GetMore getMoreNews={props.getMoreWNews} pageSize={props.worldNewsPageSize}/>
             {props.worldNews.length > 5 ? <HideAll hideAllNews={props.hideAllWNews}/> : null}
 
